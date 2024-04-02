@@ -1,6 +1,14 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        /* Custom CSS for card images */
+        .card-img-top {
+            height: 600px; /* Adjust this value as needed */
+            object-fit: cover;
+        }
+    </style>
 </head>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
@@ -25,44 +33,45 @@
     </div>
   </nav>
   
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/static/person1.png" alt="Card image">
+                <div class="card-body">
+                    <h5 class="card-title">Bill Watson</h5>
+                    <p class="card-text">Director of Sales and Operations</p>
+                    <p class="card-text">Bill is our esteemed Director of Sales and Operations, entrusted with overseeing all aspects of sales strategy and operational efficiency at our dealership. With over a decade of experience in the automotive industry, Bill has honed his skills in sales management, customer relations, and team leadership.</p>
+                    <p class="card-text"><small class="text-muted">Email: BWatson@gmail.com</small></p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/static/person2.jpg" alt="Card image">
+                <div class="card-body">
+                    <h5 class="card-title">Cameron Rodriguez</h5>
+                    <p class="card-text">Chief Financial Officer</p>
+                    <p class="card-text">Cameron holds the esteemed position of Chief Financial Officer (CFO) at our dealership, where he leads the financial operations with precision and expertise. With a background in finance and a proven track record of success, Cameron is instrumental in driving financial strategy, optimizing performance, and ensuring fiscal responsibility.</p>
+                    <p class="card-text"><small class="text-muted">Email: CRodriguez@gmail.com</small></p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/static/person3.jpg" alt="Card image">
+                <div class="card-body">
+                    <h5 class="card-title">Larry Schneider</h5>
+                    <p class="card-text">Director of Customer Experience and Relations</p>
+                    <p class="card-text">Larry serves as our esteemed Director of Customer Experience and Relations, overseeing the development and implementation of strategies to enhance customer satisfaction and loyalty. With his exceptional interpersonal skills and dedication to service excellence, Larry cultivates a culture of customer-centricity throughout the dealership.</p>
+                    <p class="card-text"><small class="text-muted">Email: LSchneider@gmail.com</small></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    </div>
-    </div>
-    
 </div>
 
+<!-- Bootstrap Bundle with Popper -->
+<script src="/static/bootstrap.bundle.min.js"></script>
+</body>
 </html>
