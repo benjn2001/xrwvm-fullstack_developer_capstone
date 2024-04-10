@@ -7,7 +7,7 @@ load_dotenv()
 backend_url = os.getenv('backend_' +
                         'url', default="http://localhost:3030")
 sentiment_analyzer_url = os.getenv('sentiment_analyzer_' +
-                                'url', default="http://localhost:5050/")
+                                   'url', default="http://localhost:5050/")
 
 
 # Add code for get requests to backend
