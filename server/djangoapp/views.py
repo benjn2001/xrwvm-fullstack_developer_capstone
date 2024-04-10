@@ -47,8 +47,8 @@ def registration(request):
         logger.debug("{} is a new user".format(username))
     if not username_exist:
         user = User.objects.create_user(username=username,
-                   first_name=first_name, last_name=last_name,
-                   password=password, email=email)
+                    first_name=first_name, last_name=last_name,
+                    password=password, email=email)
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
@@ -93,10 +93,10 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse({"status": 401, "message":
-                "Error in posting review"})
+                    "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message":
-            "Unauthorized"})
+                "Unauthorized"})
 
 
 def get_cars(request):
