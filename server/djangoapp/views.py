@@ -52,7 +52,7 @@ def registration(request):
             last_name=last_name,
             password=password,
             email=email
-)
+        )
 
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
