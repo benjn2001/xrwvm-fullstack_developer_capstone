@@ -41,15 +41,15 @@ def initiate():
         {"name": "Sorrento", "type": "SUV", "year":
                             2023, "car_make": car_make_instances[3]},
         {"name": "Carnival", "type": "SUV", "year":
-                            2023, "car_make": car_make_instances[3]},
+            2023, "car_make": car_make_instances[3]},
         {"name": "Cerato", "type": "Sedan", "year":
-                            2023, "car_make": car_make_instances[3]},
+            2023, "car_make": car_make_instances[3]},
         {"name": "Corolla", "type": "Sedan", "year":
-                        2023, "car_make": car_make_instances[4]},
+            2023, "car_make": car_make_instances[4]},
         {"name": "Camry", "type": "Sedan", "year":
-                    2023, "car_make": car_make_instances[4]},
+            2023, "car_make": car_make_instances[4]},
         {"name": "Kluger", "type": "SUV", "year":
-                2023, "car_make": car_make_instances[4]},
+            2023, "car_make": car_make_instances[4]},
     ]
     for data in car_model_data:
         CarModel.objects.create(
