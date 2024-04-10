@@ -46,9 +46,8 @@ def registration(request):
     except User.DoesNotExist:
         logger.debug("{} is a new user".format(username))
     if not username_exist:
-        user = User.objects.create_user(username=username,
-                                      first_name=first_name, last_name=last_name,
-                                        password=password, email=email)
+        user = User.objects.create_user(
+            username=username, first_name=first_name, last_name=last_name, password=password, email=email)
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
