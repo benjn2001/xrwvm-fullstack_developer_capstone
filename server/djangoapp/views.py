@@ -11,6 +11,7 @@ import json
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+
 @csrf_exempt
 def login_user(request):
     data = json.loads(request.body)
@@ -22,6 +23,7 @@ def login_user(request):
         login(request, user)
         data["status"] = "Authenticated"
     return JsonResponse(data)
+
 
 def logout_request(request):
     logout(request)
@@ -38,15 +40,15 @@ def registration(request):
     last_name = data['lastName']
     email = data['email']
     username_exist = False
-    email_exist = False
     try:
         User.objects.get(username=username)
         username_exist = True
     except User.DoesNotExist:
         logger.debug("{} is a new user".format(username))
     if not username_exist:
-        user = User.objects.create_user(username=username, first_name=first_name,
-        last_name=last_name, password=password, email=email)
+        user = User.objects.create_user(username=username,
+            first_name=first_name, last_name=last_name, 
+                password=password, email=email)
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
@@ -90,9 +92,11 @@ def add_review(request):
             post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse({"status": 401, "message":
+                "Error in posting review"})
     else:
-        return JsonResponse({"status": 403, "message": "Unauthorized"})
+        return JsonResponse({"status": 403, "message":
+            "Unauthorized"})
 
 
 def get_cars(request):
@@ -102,5 +106,6 @@ def get_cars(request):
         initiate()
 
     car_models = CarModel.objects.select_related('car_make')
-    cars = [{"CarModel": car_model.name, "CarMake": car_model.car_make.name} for car_model in car_models]
+    cars = [{"CarModel": car_model.name, "CarMake":
+        car_model.car_make.name} for car_model in car_models]
     return JsonResponse({"CarModels": cars})
