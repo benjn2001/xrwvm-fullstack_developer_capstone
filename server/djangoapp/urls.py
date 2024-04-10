@@ -100,8 +100,7 @@ def add_review(request):
             return JsonResponse({"status": 401, "message":
                 "Error in posting review"})
     else:
-        return JsonResponse({"status": 403, "message":
-            "Unauthorized"})
+        return JsonResponse({"status": 403, "message": "Unauthorized"})
 
 
 def get_cars(request):
@@ -111,5 +110,6 @@ def get_cars(request):
         initiate()
 
     car_models = CarModel.objects.select_related('car_make')
-    cars = [{"CarModel": car_model.name, "CarMake": car_model.car_make.name} for car_model in car_models]
+    cars = [{"CarModel": car_model.name, "CarMake":
+        car_model.car_make.name} for car_model in car_models]
     return JsonResponse({"CarModels": cars})
