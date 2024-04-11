@@ -57,13 +57,14 @@ def registration(request):
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
-        user = User.objects.create_user(username=username, first_name=first_name,
-            last_name=last_name, password=password, email=email)
+        user = User.objects.create_user(username=username,
+               first_name=first_name, last_name=last_name,
+               password=password, email=email)
         # Login the user and redirect to list page
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
+    else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
@@ -106,11 +107,11 @@ def add_review(request):
     if (request.user.is_anonymous is False):
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
-            return JsonResponse({"status": 401,"message":
-                "Error in posting review"})
+            return JsonResponse({"status": 401, "message":
+                                 "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
 
@@ -126,5 +127,5 @@ def get_cars(request):
 
     for car_model in car_models:
         cars.append({"CarModel": car_model.name, "CarMake":
-            car_model.car_make.name})
-    return JsonResponse({"CarModels":cars})
+                     car_model.car_make.name})
+    return JsonResponse({"CarModels": cars})
